@@ -1,0 +1,67 @@
+<html>
+<head>
+  <link rel="stylesheet" href="js/jquery-ui.css">
+  <link rel="stylesheet" href="js/jquery-ui.structure.css">
+  <link rel="stylesheet" href="js/jquery-ui.theme.css">
+ 
+  <link rel="stylesheet" href="popup.css">
+  <link rel="stylesheet" href="css/uikit.css">
+  <script src="js/jquery-1.12.4.js"></script>
+  <script src="js/jquery-ui-1.12.1.js"></script>
+  <script src="js/uikit.min.js"></script>
+  <script src="js/uikit-icons.min.js"></script>
+  
+</head>
+<body style="width: 400px">
+<ul class="profile_tab uk-margin-small" uk-tab="connect: .info_server; animation: uk-animation-slide-left-medium, uk-animation-slide-right-medium">
+	<li class="uk-active"><a class='uk-padding-small' id="ip_rages-tab" data-toggle="tab" href="#ip_rages" role="tab" aria-controls="ip_rages" aria-selected="true">Search</a></li>
+	<li><a class='uk-padding-small' id="hardware_list-tab" data-toggle="tab" href="#hardware_list" role="tab" aria-controls="hardware_list" aria-selected="false">Hardware</a></li>
+	<li><a class='uk-padding-small' id="http-tab" data-toggle="tab" href="#http_list" role="tab" aria-controls="http_list" aria-selected="false">Http</a></li>
+	<li><a class='uk-padding-small' id="ping_list-tab" data-toggle="tab" href="#ping_list" role="tab" aria-controls="ping_list" aria-selected="false">Ping</a></li>
+	<li><a class='uk-padding-small' id="update_list-tab" data-toggle="tab" href="#update_list" role="tab" aria-controls="ping_list" aria-selected="false" style='display:none;'>Update</a></li>
+</ul>
+<div class='info_server uk-switcher'>
+	<div class='uk-active' id="ip_rages" role="tabpanel" aria-labelledby="ip_rages-tab">
+	  <table class="uk-table uk-table-divider uk-table-hover uk-text-emphasis uk-table-middle uk-text-small">
+			<tbody>
+				<tr>
+					<th scope="row"><span uk-icon="search"></span> Search:</th>
+					<td id="search"></td>
+				</tr>
+				<tr class="IPv4"><th scope="row"><span uk-icon="world"></span> IPv4:</th><td id="IPv4"></td></tr>
+				<tr class="IPv6"><th scope="row"><span uk-icon="world"></span> IPv6:</th><td id="IPv6"></td></tr>
+				<tr class="rank"><th scope="row"><span uk-icon="bolt"></span> Rank:</th><td id="rank"></td></tr>
+				<tr class="dns"><th scope="row"><span uk-icon="bookmark"></span> DNS:</th><td id="dns"></td></tr>
+				<tr><th scope="row"><span uk-icon="info"></span> PTR:</th><td id="ptr"></td></tr>
+				<tr><th scope="row"><span uk-icon="server"></span> ISP:</th><td id="owner"></td></tr>
+				<tr><th scope="row"><span uk-icon="location"></span> Location:</th><td id="location"></td></tr>
+			</tbody>
+		</table>
+	</div>
+	
+	<div class="tab-pane fade" id="hardware_list" role="tabpanel" aria-labelledby="hardware_list-tab">
+	  <table class="uk-table uk-table-divider uk-table-hover uk-table-middle uk-text-small">
+			<tbody class='hardware_info'></tbody>
+		</table>
+	</div>
+	<div class="tab-pane fade" id="http_list" role="tabpanel" aria-labelledby="http-tab">
+	  <table class="uk-table uk-table-divider uk-table-hover uk-table-middle uk-text-small">
+			<tbody id="http_results"></tbody>
+		</table>
+	</div>
+	<div class="tab-pane fade" id="ping_list" role="tabpanel" aria-labelledby="ping_list-tab">
+	  <table class="uk-table uk-table-divider uk-table-hover uk-table-middle uk-text-small">
+			<tbody id="ping_results"></tbody>
+		</table>
+	</div>
+	<div class="tab-pane fade" id="update_list" role="tabpanel" aria-labelledby="ping_list-tab">
+	  <table class="uk-table uk-table-divider uk-table-hover uk-table-middle uk-text-small">
+			<div id="update" style='padding:20px;'></div>
+		</table>
+	</div>
+</div>
+  <div class='copyrights'>ip2whois.ru v. <span id="version"></span> &copy; 2024</div>
+  <script src="functions.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
