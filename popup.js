@@ -207,7 +207,7 @@ chrome.tabs.query({
 	var manifest = chrome.runtime.getManifest();
 	$("#version").html(manifest.version);
 	const curdate = new Date();
-	$("#year_holder").html((1900+curdate.getYear()));
+	$("#year_holder").html(curdate.getFullYear());
 	if(proto[0] == "http" || proto[0] == "https") {
 		var url = proto[1].split("/");
 		url[0] = url[0].replace(":","");
