@@ -1,4 +1,4 @@
-name: Build Firefox Extension ZIP
+name: Build Firefox Extension
 
 on:
   push:
@@ -6,20 +6,20 @@ on:
   workflow_dispatch:
 
 jobs:
-  build-zip:
+  build:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
-    - name: Create zip archive of extension
+    - name: Copy extension files (excluding .git, .github, dist)
       run: |
         mkdir -p dist
-        zip -r dist/ip2whois-firefox.zip . -x '*.git*' 'dist/*' '.github/*'
+        rsync -av --exclude='.git' --exclude='.github' --exclude='dist' ./ dist/
 
-    - name: Upload zip artifact
+    - name: Upload artifact
       uses: actions/upload-artifact@v4
       with:
         name: ip2whois-firefox
-        path: dist/ip2whois-firefox.zip
+        path: dist/
